@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inventory>
+    <magic>CRIUIMG</magic>
+    <arch>x86_64</arch>
+    <pages_id>abc123def456</pages_id>
+    <gen_id>20260419001</gen_id>
+    <entries>6</entries>
+    <image_pages>8192</image_pages>
+</inventory>

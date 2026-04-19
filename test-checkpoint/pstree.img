@@ -1,0 +1,1 @@
+BINARY_CRIU_HEADER_v3[{"pid":1,"ppid":0,"pgid":1,"sid":1,"comm":"systemd","nthreads":1},{"pid":1234,"ppid":1,"pgid":1234,"sid":1234,"comm":"nginx","nthreads":4},{"pid":1235,"ppid":1234,"pgid":1234,"sid":1234,"comm":"nginx: worker","nthreads":4}]

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fds>
+    <fd id="1" fd="0" type="pipe" flags="02000000" />
+    <fd id="2" fd="1" type="pipe" flags="02000000" />
+    <fd id="3" fd="2" type="file" path="/var/log/syslog" flags="0100000" />
+    <fd id="4" fd="3" type="socket" flags="02000002" />
+    <fd id="5" fd="4" type="file" path="/etc/nginx/nginx.conf" flags="0100000" />
+    <fd id="6" fd="5" type="eventfd" flags="02000000" />
+    <fd id="7" fd="6" type="epoll" flags="02000000" />
+</fds>

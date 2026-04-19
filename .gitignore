@@ -10,3 +10,4 @@ Cargo.lock
 # OS
 .DS_Store
 Thumbs.db
+criu-inspector
