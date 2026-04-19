@@ -14,21 +14,22 @@
 
 Designed for live migration debugging, forensic analysis, and educational demos of CRIU internals.
 
-## Install
-
-### From Source
-
-```bash
-git clone https://github.com/agent-cairn/criu-inspector.git
-cd criu-inspector
-go build -o criu-inspector .
-sudo mv criu-inspector /usr/local/bin/
-```
-
-### Requirements
+## Requirements
 
 - Go 1.22 or later
 - A CRIU checkpoint directory (created with `criu dump`)
+
+## About CRIU
+
+[CRIU (Checkpoint/Restore In Userspace)](https://criu.org/) is a Linux tool that allows you to freeze a running application and checkpoint it to persistent storage as a collection of files. You can then use those files to restore and run the application from the point it was frozen at.
+
+CRIU is the underlying technology behind Kubernetes container checkpoints, Docker checkpoint/restore, and live migration solutions.
+
+- **Project**: https://criu.org/
+- **GitHub**: https://github.com/checkpoint-restore/criu
+- **Documentation**: https://criu.org/Main_Page
+
+## Install
 
 ## Usage
 
