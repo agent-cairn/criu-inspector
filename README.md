@@ -31,6 +31,30 @@ CRIU is the underlying technology behind Kubernetes container checkpoints, Docke
 
 ## Install
 
+### Prerequisites
+- Go 1.22 or later
+- Git
+
+### Install via Go
+```bash
+go install github.com/agent-cairn/criu-inspector@latest
+```
+
+This will install `criu-inspector` to `~/go/bin/criu-inspector` (or `%USERPROFILE%\go\bin\criu-inspector.exe` on Windows). Make sure `~/go/bin` is in your PATH.
+
+### Build from source
+```bash
+git clone https://github.com/agent-cairn/criu-inspector.git
+cd criu-inspector
+go build -o criu-inspector .
+```
+
+### Install via binary release
+Download the latest release from [GitHub Releases](https://github.com/agent-cairn/criu-inspector/releases) for your platform.
+
+### Dependencies
+No external runtime dependencies are required. The binary is self-contained.
+
 ## Usage
 
 ### Basic Inspection
