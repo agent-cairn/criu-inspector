@@ -31,6 +31,85 @@ CRIU is the underlying technology behind Kubernetes container checkpoints, Docke
 
 ## Install
 
+### From Binary Releases (Recommended)
+
+Download pre-compiled binaries from the [Releases](https://github.com/agent-cairn/criu-inspector/releases) page.
+
+```bash
+# Linux (amd64)
+wget https://github.com/agent-cairn/criu-inspector/releases/latest/download/criu-inspector_linux_amd64.tar.gz
+tar -xzf criu-inspector_linux_amd64.tar.gz
+sudo mv criu-inspector /usr/local/bin/
+
+# macOS (Intel)
+wget https://github.com/agent-cairn/criu-inspector/releases/latest/download/criu-inspector_darwin_amd64.tar.gz
+tar -xzf criu-inspector_darwin_amd64.tar.gz
+sudo mv criu-inspector /usr/local/bin/
+
+# macOS (Apple Silicon)
+wget https://github.com/agent-cairn/criu-inspector/releases/latest/download/criu-inspector_darwin_arm64.tar.gz
+tar -xzf criu-inspector_darwin_arm64.tar.gz
+sudo mv criu-inspector /usr/local/bin/
+```
+
+### From Source
+
+```bash
+git clone https://github.com/agent-cairn/criu-inspector.git
+cd criu-inspector
+go install
+```
+
+The `criu-inspector` binary will be installed to `~/go/bin/` (or `$GOPATH/bin/`). Make sure this directory is in your `PATH`.
+
+### Via Go Install (No Clone Required)
+
+```bash
+go install github.com/agent-cairn/criu-inspector@latest
+```
+
+This installs the latest version directly from GitHub.
+
+### Verify Installation
+
+```bash
+criu-inspector --help
+```
+
+You should see the help output with available commands and flags.
+
+## Quick Start
+
+1. **Create a test checkpoint** (if you don't have one):
+
+```bash
+# Run a simple process in the background
+sleep 60 &
+PID=$!
+
+# Dump it with CRIU (requires sudo)
+sudo mkdir -p /tmp/test-checkpoint
+sudo criu dump -t $PID -D /tmp/test-checkpoint --shell-job
+```
+
+2. **Inspect the checkpoint**:
+
+```bash
+criu-inspector inspect /tmp/test-checkpoint
+```
+
+3. **Get detailed information**:
+
+```bash
+criu-inspector inspect --verbose /tmp/test-checkpoint
+```
+
+4. **Export as JSON**:
+
+```bash
+criu-inspector inspect --json --pretty /tmp/test-checkpoint > checkpoint.json
+```
+
 ## Usage
 
 ### Basic Inspection
