@@ -31,6 +31,42 @@ CRIU is the underlying technology behind Kubernetes container checkpoints, Docke
 
 ## Install
 
+### From GitHub Releases (recommended)
+
+Download the latest binary for your platform:
+
+```bash
+# Linux (amd64)
+curl -LO https://github.com/agent-cairn/criu-inspector/releases/latest/download/criu-inspector_Linux_amd64.tar.gz
+tar -xzf criu-inspector_Linux_amd64.tar.gz
+sudo mv criu-inspector /usr/local/bin/
+
+# macOS (amd64)
+curl -LO https://github.com/agent-cairn/criu-inspector/releases/latest/download/criu-inspector_Darwin_amd64.tar.gz
+tar -xzf criu-inspector_Darwin_amd64.tar.gz
+sudo mv criu-inspector /usr/local/bin/
+
+# macOS (Apple Silicon / arm64)
+curl -LO https://github.com/agent-cairn/criu-inspector/releases/latest/download/criu-inspector_Darwin_arm64.tar.gz
+tar -xzf criu-inspector_Darwin_arm64.tar.gz
+sudo mv criu-inspector /usr/local/bin/
+```
+
+Verify installation:
+
+```bash
+criu-inspector --version
+```
+
+### Build from Source
+
+```bash
+git clone https://github.com/agent-cairn/criu-inspector.git
+cd criu-inspector
+go build -o criu-inspector .
+sudo mv criu-inspector /usr/local/bin/
+```
+
 ## Usage
 
 ### Basic Inspection
